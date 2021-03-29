@@ -2,8 +2,11 @@
 let latitude = 43.594853799
 let longitude = -79.61650999
 let todayHours = [];
+let now = new Date();
+let myCircle;
+let display = 'emoji';
 
-const hourData = [
+const hoursData = [
     {en:'Rat', jp: 'ね', kanji: '子', emoji: '🐭'},
     {en:'Ox', jp: 'うし', kanji: '丑', emoji: '🐮'},
     {en:'Tiger', jp: 'とら', kanji: '虎', emoji: '🐯'},
@@ -33,8 +36,8 @@ async function getUserLocation() {
 
 
 function getHours() {
+    /* May Need to expand this for night time */
     // get date object for current, previous and next day
-    let now = new Date();
     let tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate()+1);
     let yesterday = new Date();
@@ -74,11 +77,62 @@ function getHours() {
 
     // console.log all hours in the day in readable format
     for (let j = 0; j < todayHours.length; j++){
-        console.log(moment(todayHours[j]*1000).format('h:mm:ss A')); // date in readable format: moment( <datetime> * 1000).format('MM/DD/YYYY H:mm:ss')
+        console.log(moment(todayHours[j]*1000).format('MM/DD h:mm:ss A')); // date in readable format: moment( <datetime> * 1000).format('MM/DD/YYYY H:mm:ss')
     } 
-}
+};
 
-var myCircle = Circles.create({
+function getCurrentHour() {
+    let currentHour = [];
+    let timeNow = moment(now).unix();
+    for (let i = 0; i < todayHours.length; i++){
+        if (timeNow > todayHours[i]) {
+            console.log(i);
+            continue;
+            
+        }
+        else if (timeNow < todayHours[i]) {
+            currentHour = [ i-1, todayHours[i-1], timeNow, todayHours[i] ];
+            break;
+        }
+    }
+    console.log(currentHour)
+    return currentHour;
+};
+
+function renderHourCircle(hourArray) {
+    let hourStart = hourArray[1];
+    let hourValue = hourArray[2] - hourStart;
+    let hourMaxValue = hourArray[3] - hourStart;
+
+    myCircle = Circles.create({
+        id:                  'circles-1',
+        radius:              120,
+        value:               hourValue,
+        maxValue:            hourMaxValue,
+        width:               20,
+        text:                hoursData[hourArray[0]][display],
+        colors:              ['#D3B6C6', '#4B253A'],
+        duration:            400,
+        wrpClass:            'circles-wrp',
+        textClass:           'circles-text',
+        valueStrokeClass:    'circles-valueStroke',
+        maxValueStrokeClass: 'circles-maxValueStroke',
+        styleWrapper:        true,
+        styleText:           true
+      });
+
+};
+
+function start() {
+    getHours();
+    let hourNow = getCurrentHour();
+    renderHourCircle(hourNow);
+};
+
+start();
+
+/*
+myCircle = Circles.create({
   id:                  'circles-1',
   radius:              120,
   value:               43,
@@ -94,8 +148,4 @@ var myCircle = Circles.create({
   styleWrapper:        true,
   styleText:           true
 });
-
-
-getHours();
-
-
+*/
