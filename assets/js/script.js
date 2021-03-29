@@ -32,48 +32,50 @@ async function getUserLocation() {
 }
 
 
-function getTimes() {
+function getHours() {
+    // get date object for current, previous and next day
     let now = new Date();
-    let tomorrow = new Date(now.setDate(now.getDate()+1));
-    let yesterday = new Date(now.setDate(now.getDate()-1));
+    let tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate()+1);
+    let yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
 
+    // get sun data for current days
     let todayTimes = SunCalc.getTimes(now, latitude, longitude);
     let tomorrowTimes = SunCalc.getTimes(tomorrow, latitude, longitude);
     let yesterdayTimes = SunCalc.getTimes(yesterday, latitude, longitude);
-
     
-    // get day hours
+    // get day hours by length of daylight / 6
     let sunrise = moment(todayTimes.sunrise).unix();
-    console.log(`Sunrise Time = ${sunrise}`);
     let todaySunset = moment(todayTimes.sunset).unix();
     dayHourLength = (Math.floor((todaySunset-sunrise)/6));
-    console.log(dayHourLength);
 
+    // push daytime hours to todayHours array
     todayHours[0]= sunrise; //puts sunrise time as first data in Japanese Hours array
     for (let i = 1; i < 7; i++) {
         todayHours[i]= todayHours[i-1]+dayHourLength;
     }
-
-    // get predawn hours
+    
+    // get predawn hours by length of previous night / 6
     let lastSunset = moment(yesterdayTimes.sunset).unix()
     preDawnHourLength = (Math.floor((sunrise-lastSunset)/6));
-    
-    for (let i = 0; i < 3; i++) {
+    // push predawn hours to todayHours array using .unshift()
+    for (let k = 0; k < 3; k++) {
         todayHours.unshift(todayHours[0]-preDawnHourLength);
     }
-
+    
     // get evening hours
     let nextDawn = moment(tomorrowTimes.sunrise).unix()
     eveningHourLength = (Math.floor((nextDawn-todaySunset)/6));
+    // push this evening hours to todayHours array
     for (let i = 0; i < 3; i++) {
         todayHours.push(todayHours[todayHours.length-1]+eveningHourLength);
     }
 
-    console.log(todayHours);
-    console.log(todayTimes.sunset)
+    // console.log all hours in the day in readable format
     for (let j = 0; j < todayHours.length; j++){
-        console.log(moment(todayHours[j]*1000).format('MM/DD/YYYY h:mm:ss'));
-    }    
+        console.log(moment(todayHours[j]*1000).format('h:mm:ss A')); // date in readable format: moment( <datetime> * 1000).format('MM/DD/YYYY H:mm:ss')
+    } 
 }
 
 var myCircle = Circles.create({
@@ -94,6 +96,6 @@ var myCircle = Circles.create({
 });
 
 
-getTimes();
+getHours();
 
 
