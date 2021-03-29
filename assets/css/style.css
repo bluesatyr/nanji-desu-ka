@@ -7,3 +7,29 @@
 .circles-wrp svg {
     /* transform: rotate(-45deg); */
 }
+
+body {
+    display: flexbox;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: #D3B6C6;
+    height: 50px;
+}
+
+main {
+    width: 100%;
+    display: flexbox;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 50%;
+    height: 200px;
+}
+
