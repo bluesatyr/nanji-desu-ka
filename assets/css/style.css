@@ -1,4 +1,8 @@
-
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 .circles-text {
     font-family: 'New Tegomin', serif;
@@ -8,28 +12,21 @@
     /* transform: rotate(-45deg); */
 }
 
-body {
-    display: flexbox;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 header {
-    background-color: #D3B6C6;
+    background-color: #4B253A;
     height: 50px;
 }
 
-main {
+.clock {
     width: 100%;
-    display: flexbox;
+    height: 400px;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
 .circle {
-    width: 50%;
-    height: 200px;
+    
 }
 

@@ -35,8 +35,25 @@ async function getUserLocation() {
 }
 
 
+function adjustHourTimes(array, preDawnHourLength, dayHourLength, eveningHourLength) {
+    let adjustedHours = [];
+    // adjust predawn hours
+    for (let i = 0; i < 3; i++) {
+        let hour = array[i] - (preDawnHourLength/2);
+        adjustedHours.push(hour);
+    }
+    for (let j = 3; j < 9; j++) {
+        let hour = array[j] - (dayHourLength/2);
+        adjustedHours.push(hour);
+    }
+    for (let k = 9; k < array.length; k++) {
+        let hour = array[k] - (eveningHourLength/2);
+        adjustedHours.push(hour);
+    }
+    todayHours = adjustedHours;
+}
+
 function getHours() {
-    /* May Need to expand this for night time */
     // get date object for current, previous and next day
     let tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate()+1);
@@ -51,7 +68,7 @@ function getHours() {
     // get day hours by length of daylight / 6
     let sunrise = moment(todayTimes.sunrise).unix();
     let todaySunset = moment(todayTimes.sunset).unix();
-    dayHourLength = (Math.floor((todaySunset-sunrise)/6));
+    let dayHourLength = (Math.floor((todaySunset-sunrise)/6));
 
     // push daytime hours to todayHours array
     todayHours[0]= sunrise; //puts sunrise time as first data in Japanese Hours array
@@ -61,7 +78,7 @@ function getHours() {
     
     // get predawn hours by length of previous night / 6
     let lastSunset = moment(yesterdayTimes.sunset).unix()
-    preDawnHourLength = (Math.floor((sunrise-lastSunset)/6));
+    let preDawnHourLength = (Math.floor((sunrise-lastSunset)/6));
     // push predawn hours to todayHours array using .unshift()
     for (let k = 0; k < 3; k++) {
         todayHours.unshift(todayHours[0]-preDawnHourLength);
@@ -69,17 +86,21 @@ function getHours() {
     
     // get evening hours
     let nextDawn = moment(tomorrowTimes.sunrise).unix()
-    eveningHourLength = (Math.floor((nextDawn-todaySunset)/6));
+    let eveningHourLength = (Math.floor((nextDawn-todaySunset)/6));
     // push this evening hours to todayHours array
     for (let i = 0; i < 3; i++) {
         todayHours.push(todayHours[todayHours.length-1]+eveningHourLength);
     }
+
+    adjustHourTimes(todayHours, preDawnHourLength, dayHourLength, eveningHourLength);
 
     // console.log all hours in the day in readable format
     for (let j = 0; j < todayHours.length; j++){
         console.log(moment(todayHours[j]*1000).format('MM/DD h:mm:ss A')); // date in readable format: moment( <datetime> * 1000).format('MM/DD/YYYY H:mm:ss')
     } 
 };
+
+
 
 function getCurrentHour() {
     let currentHour = [];
@@ -98,6 +119,8 @@ function getCurrentHour() {
     console.log(currentHour)
     return currentHour;
 };
+
+
 
 function renderHourCircle(hourArray) {
     let hourStart = hourArray[1];
@@ -123,10 +146,18 @@ function renderHourCircle(hourArray) {
 
 };
 
+function getSekki() {
+    let sekki = new Sekki();
+    // Get current sekki
+    let current = sekki.current();
+    console.log(current);
+}
+
 function start() {
     getHours();
-    let hourNow = getCurrentHour();
+     let hourNow = getCurrentHour();
     renderHourCircle(hourNow);
+    getSekki();
 };
 
 start();
