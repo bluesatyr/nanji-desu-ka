@@ -3,7 +3,8 @@ let latitude = 43.594853799
 let longitude = -79.61650999
 let todayHours = [];
 let now = new Date();
-let myCircle;
+let myCircle1;
+let myCircle2
 let display = 'emoji';
 
 const hoursData = [
@@ -53,6 +54,15 @@ function adjustHourTimes(array, preDawnHourLength, dayHourLength, eveningHourLen
     todayHours = adjustedHours;
 }
 
+
+/* CREATE ALL DATA - for refactoring*\
+return these objects yesterday: {timesObj}, today:{timesObj), tomorrow:{timesObj} 
+or object of objects:
+{yesterday: {timesObj}, today:{timesObj), tomorrow:{timesObj}}  timeData.yesterday.sunrise
+
+Then have these functions: getHours(), getCurrentHour(), getDayProgress(), renderHourCircle(), renderDayCircle()
+
+\*                 */
 function getHours() {
     // get date object for current, previous and next day
     let tomorrow = new Date();
@@ -127,7 +137,7 @@ function renderHourCircle(hourArray) {
     let hourValue = hourArray[2] - hourStart;
     let hourMaxValue = hourArray[3] - hourStart;
 
-    myCircle = Circles.create({
+    myCircle1 = Circles.create({
         id:                  'circles-1',
         radius:              120,
         value:               hourValue,
@@ -146,6 +156,33 @@ function renderHourCircle(hourArray) {
 
 };
 
+function renderDayNightCircle(timeNow, dawn, dayLength, nightLength) {
+    let totalValue = dayLength + nightLength;
+    myCircle2 = Circles.create({
+        id:                  'circles-2',
+        radius:              140,
+        value:               dayLength,
+        maxValue:            totalValue,
+        width:               20,
+        text:                " ",
+        colors:              ['#D3B6C6', '#4B253A'],
+        duration:            0,
+        wrpClass:            'circles-wrp',
+        textClass:           'circles-text',
+        valueStrokeClass:    'circles-valueStroke',
+        maxValueStrokeClass: 'circles-maxValueStroke',
+        styleWrapper:        true,
+        styleText:           true
+      });
+    
+    // work on this some more. Figure out best way to get nightLength?
+    let angle = (-(timeNow-dawn)/totalValue)*360
+
+    let rotation = `rotate(${angle}deg)`;
+    document.querySelector('#circles-2').style.transform = rotation;
+}
+
+
 function getSekki() {
     let sekki = new Sekki();
     // Get current sekki
@@ -159,6 +196,8 @@ function start() {
     renderHourCircle(hourNow);
     getSekki();
 };
+
+
 
 start();
 

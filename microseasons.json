@@ -1,0 +1,282 @@
+{
+    "東風解凍": {
+        "sekki" : "立春",
+        "sekki_romaji": "Risshun",
+        "sekki_en": "Beginning of spring",
+        "kou_period": "February 4–8",
+        "kou_romaji": "Harukaze kōri o toku",
+        "kou_en": "East wind melts the ice"
+    },
+    "黄鶯睍睆": {
+        "sekki" : "立春",
+        "sekki_romaji": "Risshun",
+        "sekki_en": "Beginning of spring",
+        "kou_period": "February 9–13",
+        "kou_romaji": "Kōō kenkan su",
+        "kou_en": "Bush warblers start singing in the mountains"
+    },
+    "魚上氷": {
+        "sekki" : "立春",
+        "sekki_romaji": "Risshun",
+        "sekki_en": "Beginning of spring",
+        "kou_period": "February 14–18",
+        "kou_romaji": "Uo kōri o izuru",
+        "kou_en": "Fish emerge from the ice"
+    },
+    "土脉潤起": {
+        "sekki" : "雨水",
+        "sekki_romaji": "Usui",
+        "sekki_en": "Rainwater",
+        "kou_period": "February 19–23",
+        "kou_romaji": "Tsuchi no shō uruoi okoru",
+        "kou_en": "Rain moistens the soil"
+    },
+    "霞始靆": {
+        "sekki" : "雨水",
+        "sekki_romaji": "Usui",
+        "sekki_en": "Rainwater",
+        "kou_period": "February 24–28",
+        "kou_romaji": "Kasumi hajimete tanabiku",
+        "kou_en": "Mist starts to linger"
+    },
+    "草木萌動": {
+        "sekki" : "雨水",
+        "sekki_romaji": "Usui",
+        "sekki_en": "Rainwater",
+        "kou_period": "March 1–5",
+        "kou_romaji": "Sōmoku mebae izuru",
+        "kou_en": "Grass sprouts, trees bud"
+    },
+    "蟄虫啓戸": {
+        "sekki" : "啓蟄",
+        "sekki_romaji": "Keichitsu",
+        "sekki_en": "Insects awaken",
+        "kou_period": "March 6–10",
+        "kou_romaji": "Sugomori mushito o hiraku",
+        "kou_en": "Hibernating insects surface"
+    },
+    "桃始笑": {
+        "sekki" : "啓蟄",
+        "sekki_romaji": "Keichitsu",
+        "sekki_en": "Insects awaken",
+        "kou_period": "March 11–15",
+        "kou_romaji": "Momo hajimete saku",
+        "kou_en": "First peach blossoms"
+    },
+    "菜虫化蝶": {
+        "sekki" : "啓蟄",
+        "sekki_romaji": "Keichitsu",
+        "sekki_en": "Insects awaken",
+        "kou_period": "March 16–20",
+        "kou_romaji": "Namushi chō to naru",
+        "kou_en": "Caterpillars become butterflies"
+    },
+    "雀始巣": {
+        "sekki" : "春分",
+        "sekki_romaji": "Shunbun",
+        "sekki_en": "Spring equinox",
+        "kou_period": "March 21–25",
+        "kou_romaji": "Suzume hajimete sukū",
+        "kou_en": "Sparrows start to nest"
+    },
+    "櫻始開": {
+        "sekki" : "春分",
+        "sekki_romaji": "Shunbun",
+        "sekki_en": "Spring equinox",
+        "kou_period": "March 26–30",
+        "kou_romaji": "Sakura hajimete saku",
+        "kou_en": "First cherry blossoms"
+    },
+    "雷乃発声": {
+        "sekki" : "春分",
+        "sekki_romaji": "Shunbun",
+        "sekki_en": "Spring equinox",
+        "kou_period": "March 31–April 4",
+        "kou_romaji": "Kaminari sunawachi koe o hassu",
+        "kou_en": "Distant thunder"
+    },
+    "玄鳥至": {
+        "sekki" : "清明",
+        "sekki_romaji": "Seimei",
+        "sekki_en": "Pure and clear",
+        "kou_period": "April 5–9",
+        "kou_romaji": "Tsubame kitaru",
+        "kou_en": "Swallows return"
+    },
+    "鴻雁北": {
+        "sekki" : "清明",
+        "sekki_romaji": "Seimei",
+        "sekki_en": "Pure and clear",
+        "kou_period": "April 10–14",
+        "kou_romaji": "Kōgan kaeru",
+        "kou_en": "Wild geese fly north"
+    },
+    "虹始見": {
+        "sekki" : "清明",
+        "sekki_romaji": "Seimei",
+        "sekki_en": "Pure and clear",
+        "kou_period": "April 15–19",
+        "kou_romaji": "Niji hajimete arawaru",
+        "kou_en": "First rainbows"
+    },
+    "葭始生": {
+        "sekki" : "穀雨",
+        "sekki_romaji": "Kokuu",
+        "sekki_en": "Grain rains",
+        "kou_period": "April 20–24",
+        "kou_romaji": "Ashi hajimete shōzu",
+        "kou_en": "First reeds sprout"
+    },
+    "霜止出苗": {
+        "sekki" : "穀雨",
+        "sekki_romaji": "Kokuu",
+        "sekki_en": "Grain rains",
+        "kou_period": "April 25–29",
+        "kou_romaji": "Shimo yamite nae izuru",
+        "kou_en": "Last frost, rice seedlings grow"
+    },
+    "牡丹華": {
+        "sekki" : "穀雨",
+        "sekki_romaji": "Kokuu",
+        "sekki_en": "Grain rains",
+        "kou_period": "April 30–May 4",
+        "kou_romaji": "Botan hana saku",
+        "kou_en": "Peonies bloom"
+    },
+    "蛙始鳴": {
+        "sekki" : "立夏",
+        "sekki_romaji": "Rikka",
+        "sekki_en": "Beginning of summer",
+        "kou_period": "May 5–9",
+        "kou_romaji": "Kawazu hajimete naku",
+        "kou_en": "Frogs start singing"
+    },
+    "蚯蚓出": {
+        "sekki" : "立夏",
+        "sekki_romaji": "Rikka",
+        "sekki_en": "Beginning of summer",
+        "kou_period": "May 10–14",
+        "kou_romaji": "Mimizu izuru",
+        "kou_en": "Worms surface"
+    },
+    "竹笋生": {
+        "sekki" : "立夏",
+        "sekki_romaji": "Rikka",
+        "sekki_en": "Beginning of summer",
+        "kou_period": "May 15–20",
+        "kou_romaji": "Takenoko shōzu",
+        "kou_en": "Bamboo shoots sprout"
+    },
+    "蚕起食桑": {
+        "sekki" : "小満",
+        "sekki_romaji": "Shōman",
+        "sekki_en": "Lesser ripening",
+        "kou_period": "May 21–25",
+        "kou_romaji": "Kaiko okite kuwa o hamu",
+        "kou_en": "Silkworms start feasting on mulberry leaves"
+    },
+    "紅花栄": {
+        "sekki" : "小満",
+        "sekki_romaji": "Shōman",
+        "sekki_en": "Lesser ripening",
+        "kou_period": "May 26–30",
+        "kou_romaji": "Benibana sakau",
+        "kou_en": "Safflowers bloom"
+    },
+    "麦秋至": {
+        "sekki" : "小満",
+        "sekki_romaji": "Shōman",
+        "sekki_en": "Lesser ripening",
+        "kou_period": "May 31–June 5",
+        "kou_romaji": "Mugi no toki itaru",
+        "kou_en": "Wheat ripens and is harvested"
+    },
+    "蟷螂生": {
+        "sekki" : "芒種",
+        "sekki_romaji": "Bōshu",
+        "sekki_en": "Grain beards and seeds",
+        "kou_period": "June 6–10",
+        "kou_romaji": "Kamakiri shōzu",
+        "kou_en": "Praying mantises hatch" 
+    },
+    "腐草為螢": {
+        "sekki" : "芒種",
+        "sekki_romaji": "Bōshu",
+        "sekki_en": "Grain beards and seeds",
+        "kou_period": "June 11–15",
+        "kou_romaji": "Kusaretaru kusa hotaru to naru",
+        "kou_en": "Rotten grass becomes fireflies"
+    },
+    "梅子黄": {
+        "sekki" : "芒種",
+        "sekki_romaji": "Bōshu",
+        "sekki_en": "Grain beards and seeds",
+        "kou_period": "June 16–20",
+        "kou_romaji": "Ume no mi kibamu",
+        "kou_en": "Plums turn yellow"
+    },
+    "乃東枯": {
+        "sekki" : "夏至",
+        "sekki_romaji": "Geshi",
+        "sekki_en": "Summer solstice",
+        "kou_period": "June 21–26",
+        "kou_romaji": "Natsukarekusa karuru",
+        "kou_en": "Self-heal withers"
+    },
+    "菖蒲華": {
+        "sekki" : "夏至",
+        "sekki_romaji": "Geshi",
+        "sekki_en": "Summer solstice",
+        "kou_period": "June 27–July 1",
+        "kou_romaji": "Ayame hana saku",
+        "kou_en": "Irises bloom"
+    },
+    "半夏生": {
+        "sekki" : "夏至",
+        "sekki_romaji": "Geshi",
+        "sekki_en": "Summer solstice",
+        "kou_period": "July 2–6",
+        "kou_romaji": "Hange shōzu",
+        "kou_en": "Crow-dipper sprouts"
+    },
+    "温風至": {
+        "sekki" : "小暑",
+        "sekki_romaji": "Shōsho",
+        "sekki_en": "Lesser heat",
+        "kou_period": "July 7–11",
+        "kou_romaji": "Atsukaze itaru",
+        "kou_en": "Warm winds blow"
+    },
+    "蓮始開": {
+        "sekki" : "小暑",
+        "sekki_romaji": "Shōsho",
+        "sekki_en": "Lesser heat",
+        "kou_period": "July 12–16",
+        "kou_romaji": "Hasu hajimete hiraku",
+        "kou_en": "First lotus blossoms" 
+    },
+    "鷹乃学習": {
+        "sekki" : "小暑",
+        "sekki_romaji": "Shōsho",
+        "sekki_en": "Lesser heat",
+        "kou_period": "July 17–22",
+        "kou_romaji": "Taka sunawachi waza o narau",
+        "kou_en": "Hawks learn to fly" 
+    },
+
+
+}
+
+
+/*
+
+{
+    "sekki" : ,
+    "sekki_romaji": ,
+    "sekki_en": ,
+    "kou_period": ,
+    "kou_romaji": ,
+    "kou_en": 
+},
+
+*/
