@@ -1,6 +1,6 @@
 // Global Variables
-let latitude = 43.594853799
-let longitude = -79.61650999
+let latitude;
+let longitude;
 let todayHours = [];
 let now = new Date();
 let myCircle1;
@@ -24,15 +24,18 @@ const hoursData = [
 
 
 
-// Get user location
-async function getUserLocation() {
+
+// Get user location: Use with a
+function getUserLocation() {
     var results = [];
-    await navigator.geolocation.getCurrentPosition((position) => {
+    navigator.geolocation.getCurrentPosition((position) => {
         results[0] = position.coords.latitude;
         results[1] = position.coords.longitude;
+        console.log(results);
+        localStorage.setItem('location', JSON.stringify(results));
     });
-    console.log(results);
-    return results;
+    firstTime();
+    
 }
 
 
@@ -192,14 +195,29 @@ function getSekki() {
 
 function start() {
     getHours();
-     let hourNow = getCurrentHour();
+    let hourNow = getCurrentHour();
     renderHourCircle(hourNow);
     getSekki();
 };
 
+function firstTime() {
+    if (localStorage.getItem('location')) {
+        let location = JSON.parse(localStorage.getItem('location'));
+        latitude = location[0];
+        longitude = location[1];
+    } else if (!localStorage.getItem('location')) {
+        window.alert('Please update your location');
+        return
+    };
+    start();
+}
 
+firstTime();
 
-start();
+document.getElementById('location').addEventListener('click', function(event){
+    event.preventDefault();
+    getUserLocation();
+});
 
 /*
 myCircle = Circles.create({

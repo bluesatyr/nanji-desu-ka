@@ -15,6 +15,13 @@
 header {
     background-color: #4B253A;
     height: 50px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding: 5px 10px;
+    font-family: 'New Tegomin', serif;
 }
 
 .clock {
