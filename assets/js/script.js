@@ -33,11 +33,17 @@ function getUserLocation() {
         results[1] = position.coords.longitude;
         console.log(results);
         localStorage.setItem('location', JSON.stringify(results));
+        if (results) {
+            firstTime();
+        }
     });
-    firstTime();
     
 }
 
+async function locationClickHandler(event) {
+    event.preventDefault();
+    await getUserLocation();
+}
 
 function adjustHourTimes(array, preDawnHourLength, dayHourLength, eveningHourLength) {
     let adjustedHours = [];
@@ -206,7 +212,7 @@ function firstTime() {
         latitude = location[0];
         longitude = location[1];
     } else if (!localStorage.getItem('location')) {
-        window.alert('Please update your location');
+        window.alert('Welcome to Nanjidesuka \nPlease update your location');
         return
     };
     start();
@@ -214,10 +220,9 @@ function firstTime() {
 
 firstTime();
 
-document.getElementById('location').addEventListener('click', function(event){
-    event.preventDefault();
-    getUserLocation();
-});
+document.getElementById('location').addEventListener('click', locationClickHandler);
+// document.getElementById('refresh').addEventListener('click', firstTime);
+
 
 /*
 myCircle = Circles.create({
