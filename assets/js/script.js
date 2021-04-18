@@ -191,6 +191,13 @@ function renderDayNightCircle(timeNow, dawn, dayLength, nightLength) {
     document.querySelector('#circles-2').style.transform = rotation;
 }
 
+function setFavicon(hourArray) {
+    let favicon = document.querySelector('[rel=icon]');
+    let animal = hoursData[hourArray[0]]['en'].toLowerCase();
+    let faviconPath = `./assets/images/favicons/${animal}.ico`;
+    console.log(faviconPath);
+    favicon.href = faviconPath;
+};
 
 function getSekki() {
     let sekki = new Sekki();
@@ -202,6 +209,7 @@ function getSekki() {
 function start() {
     getHours();
     let hourNow = getCurrentHour();
+    setFavicon(hourNow);
     renderHourCircle(hourNow);
     getSekki();
 };
