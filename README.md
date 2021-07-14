@@ -19,7 +19,7 @@ Before the Meiji Era (up until 1872) time in Japan was based upon an ancient Chi
 - Ushi no koku - hour of the ox
 - Tora no koku - hour of the tiger
 
-Unlike modern Western Hours, these hours were not all equal in length, but instead were divided into to groups: 6 equal hours of daylight (beginning with the Hour of the Hare - sunrise occuring midway through the hour), and 6 equal hours of nighttime (beginning with the Hour of the Rooster -sunset occuring midway through the hour). In this system solar noon always falls midway through the Hour of the Horse.
+Unlike modern Western Hours, these hours were not all equal in length, but instead were divided into two groups: 6 equal hours of daylight (beginning with the Hour of the Hare - sunrise occuring midway through the hour), and 6 equal hours of nighttime (beginning with the Hour of the Rooster -sunset occuring midway through the hour). In this system solar noon always falls midway through the Hour of the Horse.
 
 Many modern explanations of the system try to simplify it, equating 1 traditional Japanese Hour to 2 Wester hours, with 12:00pm falling in the middle of the Hour of the Horse (11:00am - 1:00pm). The Hour of the Hare therefore is assigned the Western Hours of 5:00am - 7:00am regardless of the actual sunrise time.
 
